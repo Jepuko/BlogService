@@ -1,19 +1,9 @@
 package nl.utwente.soa.sampleBlogApplication.services;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import nl.utwente.soa.sampleBlogApplication.domain.Blog;
-import nl.utwente.soa.sampleBlogApplication.domain.Comment;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -29,11 +19,7 @@ public class BlogService {
                 1L,
                 "Test Blog 1",
                 "Summary1",
-                "Content 1",
-                Arrays.asList(
-                    new Comment(1L, "Leon", "Nice blog"),
-                    new Comment(2L, "Leon",  "Wow awesome blog")
-                )
+                "Content 1"
             )
         );
         blogs.add(
@@ -41,12 +27,16 @@ public class BlogService {
                 2L,
                 "Test Blog 2",
                 "summary 2",
-                "Content 2",
-                Arrays.asList(
-                    new Comment(3L, "Leon",  "Stupid post"),
-                    new Comment(4L, "Leon",  "Test 2")
-                )
+                "Content 2"
             )
+        );
+        blogs.add(
+                new Blog(
+                        3L,
+                        "Test Blog 3",
+                        "summary 3",
+                        "Content 3"
+                )
         );
     }
 

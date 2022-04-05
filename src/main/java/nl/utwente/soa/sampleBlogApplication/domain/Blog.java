@@ -22,6 +22,4 @@ public class Blog {
     private String title;
     private String summary;
     private String content;
-
-    private List<Comment> comments = new ArrayList<>();
 }
